@@ -1,0 +1,108 @@
+package br.com.ramoosluan.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.ramoosluan.AnimalEstimacao.model.AnimalEstimacaoModel;
+import br.com.ramoosluan.model.ResponseModel;
+import br.com.ramoosluan.repository.AnimalEstimacaoRepository;;
+
+@RestController
+@RequestMapping("/service")
+public class AnimalEstimacaoService {
+	
+	@Autowired
+	private AnimalEstimacaoRepository animalEstimacaoRepository; 
+ 
+	/**
+	 * SALVAR UM NOVO REGISTRO
+	 * @param pet
+	 * @return
+	 */
+	@RequestMapping(value="/pet", method = RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_UTF8_VALUE,produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public @ResponseBody ResponseModel salvar(@RequestBody AnimalEstimacaoModel pet){
+ 
+ 
+		try {
+ 
+			this.animalEstimacaoRepository.save(pet);
+ 
+			return new ResponseModel(1,"Registro salvo com sucesso!");
+ 
+		}catch(Exception e) {
+ 
+			return new ResponseModel(0,e.getMessage());			
+		}
+	}
+ 
+	/**
+	 * ATUALIZAR O REGISTRO DE UMA PESSOA
+	 * @param pet
+	 * @return
+	 */
+	@RequestMapping(value="/pet", method = RequestMethod.PUT, consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public @ResponseBody ResponseModel atualizar(@RequestBody AnimalEstimacaoModel pet){
+ 
+		try {
+ 
+			this.animalEstimacaoRepository.save(pet);		
+ 
+			return new ResponseModel(1,"Registro atualizado com sucesso!");
+ 
+		}catch(Exception e) {
+ 
+			return new ResponseModel(0,e.getMessage());
+		}
+	}
+ 
+	/**
+	 * CONSULTAR TODAS AS PESSOAS
+	 * @return
+	 */
+	@RequestMapping(value="/pet", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public @ResponseBody List<AnimalEstimacaoModel> consultar(){
+ 
+		return this.animalEstimacaoRepository.findAll();
+	}
+ 
+	/**
+	 * BUSCAR UMA PESSOA PELO CÓDIGO
+	 * @param pet
+	 * @return
+	 */
+	@RequestMapping(value="/pessoa/{ds_nome}", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public @ResponseBody AnimalEstimacaoModel buscar(@PathVariable("ds_nome") String nome){
+ 
+		return null;// this.pessoaRepository.findOne(codigo);
+	}
+ 
+	/***
+	 * EXCLUIR UM REGISTRO PELO CÓDIGO
+	 * @param nome
+	 * @return
+	 */
+	@RequestMapping(value="/pessoa/{ds_nome}", method = RequestMethod.DELETE, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public @ResponseBody ResponseModel excluir(@PathVariable("ds_nome") String nome){
+ 
+		AnimalEstimacaoModel animalEstimacaoModel = null;// pessoaRepository.findOne(codigo);
+ 
+		try {
+ 
+			AnimalEstimacaoRepository.delete(animalEstimacaoModel);
+ 
+			return new ResponseModel(1, "Registro excluido com sucesso!");
+ 
+		}catch(Exception e) {
+			return new ResponseModel(0, e.getMessage());
+		}
+	}
+	
+}

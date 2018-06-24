@@ -1,0 +1,25 @@
+package br.com.ramoosluan.repository;
+
+
+import java.util.List;
+
+
+import org.springframework.data.repository.Repository;
+
+import br.com.ramoosluan.model.AnimalEstimacaoModel;
+
+
+public interface AnimalEstimacaoRepository extends Repository<AnimalEstimacaoModel, String> {
+	
+	void save(AnimalEstimacaoModel pet);
+	 
+	static void delete(AnimalEstimacaoModel pet) {
+		// TODO Auto-generated method stub
+		
+	}
+ 
+	List<AnimalEstimacaoModel> findAll();
+ 
+	//PessoaModel findOne(Integer id);
+	
+}

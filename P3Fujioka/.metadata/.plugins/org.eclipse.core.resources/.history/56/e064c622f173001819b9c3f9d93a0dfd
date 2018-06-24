@@ -1,0 +1,22 @@
+package br.com.ramoosluan.repository;
+
+
+import java.util.List;
+
+import org.springframework.data.repository.Repository;
+
+import br.com.ramoosluan.model.PessoaModel;
+import br.com.ramoosluan.model.ProdutoModel;
+
+
+public interface ProdutoRepository extends Repository<PessoaModel, Integer> {
+	
+	void save(ProdutoModel produto);
+	 
+	void delete(ProdutoModel produto);
+ 
+	List<ProdutoModel> findAll();
+ 
+	//PessoaModel findOne(Integer id);
+	
+}

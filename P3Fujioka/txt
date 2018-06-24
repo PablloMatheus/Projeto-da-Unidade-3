@@ -1,0 +1,16 @@
+﻿LINK DO PROJETO:
+
+
+PATHS DE PARA REQUISIÇÃO HTTP:
+localhost/8090/pessoa
+localhost/8090/automoveis
+
+1.Criar Banco de dados no phpmyadmin, create database blog;
+2.Criar duas tabelas, chamadas tb_pessoa e tb_automovel.
+3.Inserir no minimo um registro em cada tabela.
+4.Executar o projeto e fazer a requisição.
+
+GRUPO:
+PABLLO MATHEUS, 
+REBECA DINIZ, 
+JOÃO CARLOS. GIT:https://github.com/PablloMatheus/Projeto-da-Unidade-3.git

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.aspectj.apache.bcel.Repository"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.ComponentScan"/>
+<fullyQualifiedTypeName name="br.com.ramoosluan.AnimalEstimacao.model.AnimalEstimacaoModel"/>
+<fullyQualifiedTypeName name="br.com.ramoosluan.AnimalEstimacao.repository.AnimalEstimacaoRepository"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,53 @@
+package br.com.ramoosluan.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Table(name="tb_produto")
+@Entity
+public class ProdutoModel {
+	
+	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO)
+	@Column(name="id_produto")
+	private Integer codigo;
+ 
+	@Column(name="nomeProduto")
+	private String  nomeProduto;
+ 
+	@Column(name="precoProduto")
+	private boolean precoProduto;
+	
+	
+	public Integer getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(Integer codigo) {
+		this.codigo = codigo;
+	}
+
+	public String getNomeProduto() {
+		return nomeProduto;
+	}
+
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
+	}
+
+	public boolean isPrecoProduto() {
+		return precoProduto;
+	}
+
+	public void setPrecoProduto(boolean precoProduto) {
+		this.precoProduto = precoProduto;
+	}
+	
+	
+ 
+	
+}

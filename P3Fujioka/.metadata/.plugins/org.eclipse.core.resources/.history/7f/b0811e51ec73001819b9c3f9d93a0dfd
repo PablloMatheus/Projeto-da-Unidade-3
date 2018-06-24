@@ -1,0 +1,53 @@
+package br.com.ramoosluan.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Table(name="tb_animalEstimacao")
+@Entity
+public class AnimalEstimacaoModel {
+	
+	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO)
+	
+	@Column(name="ds_nome")
+	private String nomePet;
+ 
+	@Column(name="dg_raca")
+	private String  racaPet;
+ 
+	@Column(name="fl_idade")
+	private boolean idadePet;
+
+	public String getNomePet() {
+		return nomePet;
+	}
+
+	public void setNomePet(String nomePet) {
+		this.nomePet = nomePet;
+	}
+
+	public String getRacaPet() {
+		return racaPet;
+	}
+
+	public void setRacaPet(String racaPet) {
+		this.racaPet = racaPet;
+	}
+
+	public boolean isIdadePet() {
+		return idadePet;
+	}
+
+	public void setIdadePet(boolean idadePet) {
+		this.idadePet = idadePet;
+	}
+ 
+
+ 
+	
+}
